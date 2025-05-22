@@ -10,12 +10,39 @@ import { BookService } from '../../services/book.service';
 export class BookListComponent implements OnInit {
   books: Book[] = [];
   loading = false;
-  errorMessage = '';
+  errorMessage = '';  viewMode = 'grid'; // Default view mode: 'grid' or 'list'
+  
+  // Colors for the book cover displays
+  private bookColors: string[] = [
+    '#4361ee', '#3a0ca3', '#7209b7', '#f72585',
+    '#4cc9f0', '#4895ef', '#560bad', '#480ca8',
+    '#3f37c9', '#4361ee', '#4cc9f0', '#457b9d'
+  ];
 
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
     this.loadBooks();
+    // Try to get saved view preference from localStorage
+    const savedViewMode = localStorage.getItem('bookViewMode');
+    if (savedViewMode && (savedViewMode === 'grid' || savedViewMode === 'list')) {
+      this.viewMode = savedViewMode;
+    }
+  }
+    // Method to generate consistent colors for book cards based on book title
+  getBookColor(book: Book): string {    
+    // Generate a simple hash from the book title to select a color
+    const hash = book.title.split('').reduce((acc: number, char: string) => {
+      return acc + char.charCodeAt(0);
+    }, 0);
+    
+    return this.bookColors[hash % this.bookColors.length];
+  }
+  
+  // Save view mode preference
+  setViewMode(mode: string): void {
+    this.viewMode = mode;
+    localStorage.setItem('bookViewMode', mode);
   }
 
   loadBooks(): void {

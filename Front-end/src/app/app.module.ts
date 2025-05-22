@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { BookFormComponent } from './components/book-form/book-form.component';
+import { HomeComponent } from './components/home/home.component';
 
-@NgModule({  declarations: [
+@NgModule({  
+  declarations: [
     AppComponent,
     BookListComponent,
     BookDetailsComponent,
-    BookFormComponent
-  ],imports: [
+    BookFormComponent,
+    HomeComponent
+  ],
+  imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
