@@ -12,6 +12,13 @@ export class BookDetailsComponent implements OnInit {
   book: Book | null = null;
   loading = false;
   errorMessage = '';
+  
+  // Colors for the book cover
+  private bookColors: string[] = [
+    '#4361ee', '#3a0ca3', '#7209b7', '#f72585',
+    '#4cc9f0', '#4895ef', '#560bad', '#480ca8',
+    '#3f37c9', '#4361ee', '#4cc9f0', '#457b9d'
+  ];
 
   constructor(
     private bookService: BookService,
@@ -39,7 +46,20 @@ export class BookDetailsComponent implements OnInit {
       }
     });
   }
-
+  // Generate a consistent color for book cover based on the book title
+  getBookColor(): string {
+    if (!this.book || !this.book.title) {
+      return this.bookColors[0];
+    }
+    
+    // Generate a simple hash from the book title
+    const hash = this.book.title.split('').reduce((acc, char) => {
+      return acc + char.charCodeAt(0);
+    }, 0);
+    
+    return this.bookColors[hash % this.bookColors.length];
+  }
+  
   deleteBook(): void {
     if (this.book && this.book.id && confirm('Are you sure you want to delete this book?')) {
       this.bookService.deleteBook(this.book.id).subscribe({
