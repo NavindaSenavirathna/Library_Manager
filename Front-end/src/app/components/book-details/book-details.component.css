@@ -1,0 +1,22 @@
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #f8f9fa;
+}
+
+dt {
+  font-weight: bold;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+  .btn {
+    margin-bottom: 0.5rem;
+  }
+}

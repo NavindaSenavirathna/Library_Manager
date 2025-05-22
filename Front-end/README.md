@@ -1,4 +1,14 @@
-# FrontEnd
+# Library Manager - Frontend
+
+This is the frontend application for the Library Manager system. It provides a user interface for managing a collection of books.
+
+## Features
+
+- Display a list of all books in the library
+- View detailed information about a specific book
+- Add new books to the library
+- Edit existing book information
+- Delete books from the library
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.10.
 
