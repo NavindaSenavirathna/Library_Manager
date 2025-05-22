@@ -1,31 +1,79 @@
 .navbar {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  background-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.15);
   margin-bottom: 1.5rem;
+  padding: 0.75rem 0;
 }
 
 .navbar-brand {
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  font-size: 1.4rem;
 }
 
 .nav-link {
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.25rem;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .nav-link.active {
-  font-weight: 700;
+  font-weight: 600;
   color: white !important;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Add underline animation to active links */
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 40px;
+  height: 2px;
+  background-color: white;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 60px;
 }
 
 .footer {
-  position: relative;
-  bottom: 0;
+  background-color: var(--dark-color);
+  color: #fff;
+  padding: 1.5rem 0;
   width: 100%;
-  margin-top: 3rem;
 }
 
-/* Make the container min-height to push footer down */
-.container {
-  min-height: calc(100vh - 180px);
+.footer i.fa-heart {
+  animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Make sure the page has minimum height to push footer down */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-container {
+  flex: 1 0 auto;
 }
