@@ -1,0 +1,89 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h2>{{ isEditMode ? 'Edit' : 'Add' }} Book</h2>
+    </div>
+    
+    <div class="card-body">
+      <div *ngIf="loading" class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+      
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            formControlName="title"
+            [ngClass]="{ 'is-invalid': submitted && f['title'].errors }"
+          />
+          <div *ngIf="submitted && f['title'].errors" class="invalid-feedback">
+            <div *ngIf="f['title'].errors['required']">Title is required</div>
+            <div *ngIf="f['title'].errors['maxlength']">Title cannot exceed 100 characters</div>
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="author" class="form-label">Author</label>
+          <input
+            type="text"
+            class="form-control"
+            id="author"
+            formControlName="author"
+            [ngClass]="{ 'is-invalid': submitted && f['author'].errors }"
+          />
+          <div *ngIf="submitted && f['author'].errors" class="invalid-feedback">
+            <div *ngIf="f['author'].errors['required']">Author is required</div>
+            <div *ngIf="f['author'].errors['maxlength']">Author cannot exceed 100 characters</div>
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="isbn" class="form-label">ISBN</label>
+          <input
+            type="text"
+            class="form-control"
+            id="isbn"
+            formControlName="isbn"
+            [ngClass]="{ 'is-invalid': submitted && f['isbn'].errors }"
+          />
+          <div *ngIf="submitted && f['isbn'].errors" class="invalid-feedback">
+            <div *ngIf="f['isbn'].errors['required']">ISBN is required</div>
+            <div *ngIf="f['isbn'].errors['pattern']">
+              ISBN must be a valid format (10-17 digits with optional hyphens)
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="publicationDate" class="form-label">Publication Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="publicationDate"
+            formControlName="publicationDate"
+            [ngClass]="{ 'is-invalid': submitted && f['publicationDate'].errors }"
+          />
+          <div *ngIf="submitted && f['publicationDate'].errors" class="invalid-feedback">
+            <div *ngIf="f['publicationDate'].errors['required']">Publication date is required</div>
+          </div>
+        </div>
+        
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="submit" class="btn btn-primary me-md-2" [disabled]="loading">
+            {{ isEditMode ? 'Update' : 'Save' }}
+          </button>
+          <a routerLink="/books" class="btn btn-secondary">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
