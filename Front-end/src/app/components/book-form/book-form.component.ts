@@ -15,7 +15,16 @@ export class BookFormComponent implements OnInit {
   bookId?: number;
   loading = false;
   errorMessage = '';
+  successMessage = '';
   submitted = false;
+  submitting = false;
+  
+  // Colors for the book preview
+  private bookColors: string[] = [
+    '#4361ee', '#3a0ca3', '#7209b7', '#f72585',
+    '#4cc9f0', '#4895ef', '#560bad', '#480ca8',
+    '#3f37c9', '#4361ee', '#4cc9f0', '#457b9d'
+  ];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -62,7 +71,21 @@ export class BookFormComponent implements OnInit {
   }
 
   // Getter for easy access to form fields
-  get f() { return this.bookForm.controls; }
+  get f(): { [key: string]: any } { 
+    return this.bookForm.controls; 
+  }
+    // Generate a color for the book preview based on form values
+  getFormPreviewColor(): string {
+    const title = this.bookForm.get('title')?.value || '';
+    const author = this.bookForm.get('author')?.value || '';
+    
+    // Generate a hash from title and author
+    const hash = (title + author).split('').reduce((acc: number, char: string) => {
+      return acc + char.charCodeAt(0);
+    }, 0);
+    
+    return this.bookColors[hash % this.bookColors.length];
+  }
 
   onSubmit(): void {
     this.submitted = true;
@@ -72,32 +95,41 @@ export class BookFormComponent implements OnInit {
       return;
     }
 
+    this.submitting = true;
     this.loading = true;
+    this.successMessage = '';
+    this.errorMessage = '';
     const bookData: Book = {
       ...this.bookForm.value
-    };
-
-    if (this.isEditMode && this.bookId) {
+    };    if (this.isEditMode && this.bookId) {
       bookData.id = this.bookId;
       this.bookService.updateBook(this.bookId, bookData).subscribe({
         next: () => {
-          this.router.navigate(['/books']);
+          this.successMessage = 'Book updated successfully!';
+          setTimeout(() => {
+            this.router.navigate(['/books']);
+          }, 1000);
         },
         error: (error) => {
           this.errorMessage = 'Failed to update book. Please try again.';
           console.error('There was an error updating the book!', error);
           this.loading = false;
+          this.submitting = false;
         }
       });
     } else {
       this.bookService.createBook(bookData).subscribe({
         next: () => {
-          this.router.navigate(['/books']);
+          this.successMessage = 'Book created successfully!';
+          setTimeout(() => {
+            this.router.navigate(['/books']);
+          }, 1000);
         },
         error: (error) => {
           this.errorMessage = 'Failed to create book. Please try again.';
           console.error('There was an error creating the book!', error);
           this.loading = false;
+          this.submitting = false;
         }
       });
     }
