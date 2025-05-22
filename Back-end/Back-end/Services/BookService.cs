@@ -30,7 +30,31 @@ namespace Back_end.Services
                 Author = "F. Scott Fitzgerald",
                 ISBN = "978-0743273565",
                 PublicationDate = new DateTime(1925, 4, 10)
-            }
+            },
+            new Book
+            {
+                Id = 4,
+                Title = "The Catcher in the Rye",
+                Author = "J.D. Salinger",
+                ISBN = "978-0316769488",
+                PublicationDate = new DateTime(1951, 7, 16)
+            },
+            new Book
+            {
+                Id = 5,
+                Title = "Pride and Prejudice",
+                Author = "Jane Austen",
+                ISBN = "978-1503290563",
+                PublicationDate = new DateTime(1813, 1, 28)
+            },
+            new Book
+            {
+                Id = 6,
+                Title = "The Hobbit",
+                Author = "J.R.R. Tolkien",
+                ISBN = "978-0547928227",
+                PublicationDate = new DateTime(1937, 9, 21)
+            },
         };
 
         // Get all books
