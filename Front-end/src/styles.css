@@ -1,40 +1,143 @@
 /* Import Bootstrap CSS */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #4361ee;
+  --primary-hover: #3a56d4;
+  --secondary-color: #3f37c9;
+  --accent-color: #4cc9f0;
+  --success-color: #4caf50;
+  --danger-color: #f72585;
+  --warning-color: #ff9e00;
+  --info-color: #4cc9f0;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --text-color: #333;
+  --text-muted: #6c757d;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --transition-speed: 0.3s;
+}
 
 /* Global styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafc;
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Card styling */
 .card {
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  border-radius: 12px;
   border: none;
   margin-bottom: 2rem;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
+.card:hover {
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
 .btn {
-  border-radius: 4px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all var(--transition-speed);
+  padding: 0.5rem 1.25rem;
 }
 
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+/* Form styling */
+.form-control, .form-select {
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #dee2e6;
+}
+
+.form-control:focus, .form-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.25);
+  border-color: var(--primary-color);
+}
+
+/* Alerts */
 .alert {
-  border-radius: 4px;
+  border-radius: 8px;
+  border: none;
 }
 
-/* Add some spacing */
-.mt-4 {
-  margin-top: 1.5rem;
+/* Table styling */
+table.table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
 }
 
-.mb-4 {
-  margin-bottom: 1.5rem;
+.table-hover tbody tr:hover {
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* Error styling */
 .error-message {
-  color: #dc3545;
+  color: var(--danger-color);
   margin-top: 0.25rem;
   font-size: 0.875rem;
+}
+
+/* Book card layout */
+.book-card {
+  height: 100%;
+  transition: transform var(--transition-speed);
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-cover {
+  height: 200px;
+  background-color: #e9ecef;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Page container */
+.page-container {
+  flex: 1;
+  padding-bottom: 2rem;
+}
+
+/* View toggle buttons */
+.view-toggle .btn {
+  padding: 0.25rem 0.75rem;
 }
