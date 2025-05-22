@@ -1,0 +1,14 @@
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\bin\Debug\net9.0\Back-end.exe
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\bin\Debug\net9.0\Back-end.deps.json
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\bin\Debug\net9.0\Back-end.runtimeconfig.json
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\bin\Debug\net9.0\Back-end.dll
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\bin\Debug\net9.0\Back-end.pdb
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\Back-end.GeneratedMSBuildEditorConfig.editorconfig
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\Back-end.AssemblyInfoInputs.cache
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\Back-end.AssemblyInfo.cs
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\Back-end.csproj.CoreCompileInputs.cache
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\Back-end.dll
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\refint\Back-end.dll
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\Back-end.pdb
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\Back-end.genruntimeconfig.cache
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\ref\Back-end.dll
