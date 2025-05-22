@@ -1,0 +1,50 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h2>Book Details</h2>
+    </div>
+
+    <div class="card-body">
+      <div *ngIf="loading" class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+
+      <div *ngIf="!loading && book">
+        <dl class="row">
+          <dt class="col-sm-3">ID:</dt>
+          <dd class="col-sm-9">{{ book.id }}</dd>
+
+          <dt class="col-sm-3">Title:</dt>
+          <dd class="col-sm-9">{{ book.title }}</dd>
+
+          <dt class="col-sm-3">Author:</dt>
+          <dd class="col-sm-9">{{ book.author }}</dd>
+
+          <dt class="col-sm-3">ISBN:</dt>
+          <dd class="col-sm-9">{{ book.isbn }}</dd>
+
+          <dt class="col-sm-3">Publication Date:</dt>
+          <dd class="col-sm-9">{{ book.publicationDate | date }}</dd>
+        </dl>
+      </div>
+
+      <div *ngIf="!loading && !book && !errorMessage" class="alert alert-warning">
+        Book not found.
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="btn-group">
+        <button *ngIf="book" [routerLink]="['/edit', book.id]" class="btn btn-primary me-2">Edit</button>
+        <button *ngIf="book" (click)="deleteBook()" class="btn btn-danger me-2">Delete</button>
+        <button [routerLink]="['/books']" class="btn btn-secondary">Back to List</button>
+      </div>
+    </div>
+  </div>
+</div>
