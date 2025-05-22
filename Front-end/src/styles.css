@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import Bootstrap CSS */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.card {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  border-radius: 4px;
+}
+
+.alert {
+  border-radius: 4px;
+}
+
+/* Add some spacing */
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+/* Error styling */
+.error-message {
+  color: #dc3545;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+}
