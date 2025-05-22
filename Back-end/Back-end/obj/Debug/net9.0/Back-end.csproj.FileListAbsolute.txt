@@ -24,7 +24,6 @@ D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\bin\Debug\net9.0\Swashb
 D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\scopedcss\bundle\Back-end.styles.css
-D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\compressed\ka9jjczda6-5ipweew5fc.gz
 D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\staticwebassets.build.json
 D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\staticwebassets.development.json
 D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -35,3 +34,5 @@ D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\static
 D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Back-end.props
 D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\staticwebassets.pack.json
 D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\Back-end.csproj.Up2Date
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\Back-end.sourcelink.json
+D:\Enhanzer Assignment\Library_Manager\Back-end\Back-end\obj\Debug\net9.0\compressed\ka9jjczda6-0qiaa0wcik.gz
